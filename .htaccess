@@ -1,0 +1,15 @@
+RedirectMatch 403 ^\/[^\.]{1}([^\.]+|)$
+RedirectMatch 403 ^\/(?:(?!([0-9]+\/[0-9]+\/[0-9]+\.png|index.php|access.php|bw.php|cron.php|api.php|cache.php|leaflet.js|leaflet.css)).)+$
+
+<FilesMatch "(access.php|bw.php)">
+AuthType Basic
+AuthName "Coming Soon"
+AuthUserfile /home/webpages/lima-city/perfectykills/immo/.htpasswd
+Require valid-user
+</FilesMatch>
+
+RewriteEngine on
+RewriteBase /
+RewriteCond  %{REQUEST_FILENAME} !-f
+RewriteCond  %{REQUEST_FILENAME} !-d
+RewriteRule  ^(.*)$ index.php [QSA,L]

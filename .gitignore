@@ -1,0 +1,11 @@
+vendor/
+*.json
+*.json.hist
+.htpasswd
+*.xlsx
+*.csv
+*.png
+cacher.txt
+cache/
+config.php
+!.gitignore
